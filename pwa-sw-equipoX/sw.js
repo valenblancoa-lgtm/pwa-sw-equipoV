@@ -1,4 +1,4 @@
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE_ESTATICO = `estatico-${VERSION}`;
 const CACHE_DATOS = `datos-${VERSION}`;
 // Reto A: caché para recursos dinámicos (no precacheados), con límite de entradas
