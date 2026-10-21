@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; }
+header { background: #0b5394; color: #fff; padding: 12px 16px;
+  display: flex; justify-content: space-between; align-items: center; }
+h1 { font-size: 1.2rem; margin: 0; }
+main { padding: 16px; }
+li { background: #fff; margin-bottom: 8px; padding: 10px; border-radius: 6px; }
+#aviso { position: fixed; bottom: 0; left: 0; right: 0; padding: 12px;
+  background: #fff2cc; text-align: center; }

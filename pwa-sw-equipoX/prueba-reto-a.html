@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba Reto A</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Prueba Reto A · límite de caché</h1></header>
+  <main>
+    <p>Pide 15 recursos distintos. La caché <b>dinamico-v1</b> nunca debe pasar de 10 entradas.</p>
+    <button id="btn">Pedir 15 recursos</button>
+    <p id="res"></p>
+  </main>
+  <script>
+    document.getElementById('btn').onclick = async () => {
+      for (let i = 1; i <= 15; i++) {
+        await fetch('data/tareas.json?r=' + i).catch(() => {});
+        await fetch('styles.css?r=' + i).catch(() => {});
+      }
+      const c = await caches.open('dinamico-v1');
+      const n = (await c.keys()).length;
+      document.getElementById('res').textContent =
+        'Entradas en dinamico-v1: ' + n + ' (máximo 10). Revisa Application → Cache Storage.';
+    };
+  </script>
+</body>
+</html>
